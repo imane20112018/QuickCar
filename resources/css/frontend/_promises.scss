@@ -1,0 +1,43 @@
+.promises {
+    //height: 400px;
+    //background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    gap: $space;
+    .el {
+        //height: 400px;
+        background: $white;
+        clip-path: inset(0 round 12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: $space * 2 $space $space*1.5 ;
+        gap: $space*0.5;
+        .tit_promise {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: $color_text;
+        }
+        .icon {
+            background: $bg_white;
+            display: flex;
+            width: 50px;
+            aspect-ratio: 1;
+            align-items: center;
+            justify-content: center;
+            clip-path: inset(0 round 25px);
+            i {
+                font-size: 24px;
+                color: $color_text;
+            }
+        }
+        .txt {
+            p {
+                color: $color_text;
+                font-size: 15px;
+            }
+        }
+    }
+}

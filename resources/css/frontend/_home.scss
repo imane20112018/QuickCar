@@ -1,0 +1,200 @@
+.cover {
+    height: 600px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .photo_cover {
+        width: 100%;
+        height: 100%;
+        inset: 50%;
+        object-fit: cover;
+        z-index: 0;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        object-position: center 20%;
+        filter: blur(0);
+        //opacity: 0.4;
+        animation: movePhoto 1.5s ease-in-out;
+    }
+
+    @keyframes movePhoto {
+
+        0% {
+            object-position: center 0;
+        }
+        100% {
+            object-position: center 20%;
+        }
+        
+    }
+
+    .cover-content {
+        height: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $space;
+        position: relative;
+        h1 {
+            width: 90vw;
+            max-width: 800px;
+            text-align: center;
+            font-size: 50px;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            color: $white;
+            width: 90vw;
+            max-width: 680px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .booking-section {
+            position: absolute;
+            width: 100%;
+            //max-width: 850px;
+            height: 140px;
+            background: #ffffffe3;
+            bottom: 0;
+            transform: translateY(50%);
+            padding: $space $space * 2;
+            //border-radius: 12px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            clip-path: inset(0 round 12px);
+            backdrop-filter: blur(5px);
+            form {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                gap: $space;
+                .box-form {
+                    flex: 1;
+                    height: 100%;
+                    //background: blue;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: $space * 0.4;
+                    position: relative;
+
+                    label {
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        color: $color_text;
+                        i {
+                            font-size: 14px;
+                            color: $main_500;
+                        }
+                    }
+                    input,
+                    select {
+                        height: 36px;
+                        border: 1px solid $gray;
+                        padding-inline: 10px;
+                        border-radius: $border-radius;
+                        font-size: 90%;
+                        width: 100%;
+                        background: transparent;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    select {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        text-transform: capitalize;
+                        font-size: 14px;
+                    }
+                    span {
+                        position: relative;
+                        i {
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: $gray;
+                        }
+                    }
+                    button {
+                        background: #ff6900;
+                        height: 36px;
+                        border-radius: $border-radius;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.splide {
+    //background: red;
+    .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 50px;
+        }
+    }
+}
+
+.boxs {
+    display: grid;
+    height: auto;
+    //background: blue;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $space;
+    transition: all 0.3s ease-in-out;
+}
+
+@include respond("laptop") {
+    .boxs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include respond("phone") {
+    .cover .cover-content h1 {
+        font-size: 24px;
+    }
+    .cover .cover-content p {
+        font-size: 14px;
+    }
+    .cover .cover-content .booking-section form {
+        flex-direction: column;
+        .box-form {
+            input,
+            select,
+            button {
+                height: 40px;
+            }
+        }
+    }
+
+    .cover .cover-content .booking-section {
+        position: static;
+        width: 100%;
+        height: auto;
+        transform: translateY(0);
+        padding: $space * 2 $space;
+    }
+
+    .cover {
+        height: auto;
+        background-color: $black;
+        padding-block: $space * 2;
+    }
+    .cover .cover-content {
+        height: auto;
+    }
+}

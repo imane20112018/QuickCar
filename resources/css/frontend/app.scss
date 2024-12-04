@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables";
+@import "./reset";
+@import "./nav";
+@import "./home";
+@import "./date";
+@import "./box-car";
+@import "./promises";
+@import "./cars";
+@import "./car";
+@import "./footer";
+@import "./alert";
+@import "./profile";
+@import "./search";
+
+*,
+*::after,
+*::before {
+    font-family: "Inter", sans-serif;
+}
+
+img {
+    color: transparent;
+}
+
+h1 {
+    color: $main_500;
+}
+
+body {
+    min-height: 100vh;
+    background: $bg_white;
+}
+
+:root {
+    --sb-track-color: #232e33;
+    --sb-thumb-color: #6baf8d;
+    --sb-size: 14px;
+}
+
+@supports (-webkit-appearance: none) {
+    body::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #c7c7c7;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: #4d4d4d;
+    }
+}
+
+@-moz-document url-prefix(){
+    html {
+        scrollbar-color: #4d4d4d #eeeeee00;
+        scrollbar-width: thin;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: $width;
+    //background: yellow;
+    margin: 0 auto;
+}
+
+.splide_hidden {
+    display: none !important;
+}
+
+.tit {
+    height: 80px;
+    //background: red;
+    display: flex;
+    align-items: center;
+    h2 {
+        font-size: 24px;
+        text-transform: capitalize;
+        color: $color_text;
+        font-weight: 700;
+    }
+}
+
+@include respond("phone") {
+    body {
+        width: 100vw;
+    }
+    .boxs {
+        display: grid;
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .container {
+        width: 100vw !important;
+        padding-inline: 20px;
+    }
+    .promises {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        gap: 20px;
+    }
+    .promises .el {
+        padding: 60px 20px 40px;
+        .txt {
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    .promises .el .tit_promise {
+        font-size: 20px;
+    }
+}
+
+@include respond("ipad") {
+    .container {
+        padding-inline: 20px;
+    }
+}

@@ -1,0 +1,158 @@
+.checkout_box {
+    min-height: 400px;
+    height: auto;
+    //background-color: red;
+    display: flex;
+    gap: $space;
+
+    .form {
+        flex: 1 1 auto;
+        background: $white;
+        display: flex;
+        justify-content: flex-start;
+        padding-block: 0 $space * 5;
+        clip-path: inset(0 round 12px);
+        flex-direction: column;
+        align-items: center;
+        gap: $space * 2;
+        position: relative;
+        .tit-checkout {
+            width: 100%;
+            height: 80px;
+            background: $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h2 {
+                font-size: 20px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $white;
+            }
+        }
+
+        form {
+            width: 80%;
+            //background: red;
+            max-width: 460px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content max-content max-content max-content;
+            height: auto;
+            gap: 20px;
+            .box {
+                height: auto;
+                //background: blue;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                &:nth-child(1) {
+                    grid-column: 1/-1;
+                }
+                &_details {
+                    grid-column: 1/-1;
+                    //background: blue;
+                    padding-block: $space * 1.5;
+                    border-bottom: 2px dashed #acacac73;
+                    border-top: 2px dashed #acacac73;
+                    margin-block: $space;
+                    position: relative;
+                    span.detail{
+
+                        position: absolute;
+                        background: $white;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        padding: 4px 12px;
+                        text-transform: uppercase;
+                        color: $color_text;
+                        font-size: 14px;
+
+                    }
+                    table,
+                    td {
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+                    td {
+                        line-height: 30px;
+                        font-size: 14px;
+                        color: $color_text;
+                        padding-inline: $space;
+                    }
+                    td:nth-child(2) {
+                        text-align: start;
+                    }
+                }
+                &:last-child {
+                    grid-column: 1/2;
+                    //background: red;
+                    //margin-top: $space;
+                    background-color: $black;
+                    color: $white;
+                    border-radius: 4px;
+                }
+
+                label {
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: $color_text;
+                    text-transform: capitalize;
+                    i {
+                        font-size: 14px;
+                    }
+                }
+                input {
+                    background: transparent;
+                    border: 1px solid #acacac7d;
+                    border-radius: 4px;
+                    height: 36px;
+                    margin: 0 auto;
+                    padding: 0 10px;
+                    width: 100%;
+                    font-size: 14px;
+                    color: $color_text;
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+                button {
+                    height: 36px;
+                    text-transform: capitalize;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .info {
+        width: 380px;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: $space;
+        //clip-path: inset(0 round 12px);
+        .box-car{
+            pointer-events: none;
+        }
+        .div-info{
+            //display: none;
+            .info{
+               flex-direction: row;
+            }
+        }
+        &_txt{
+            height: auto;
+            background: $white;
+            clip-path: inset(0 round 12px);
+            padding: $space;
+            flex: 1;
+            p{
+                color: $color_text;
+                font-size: 14px;
+            }
+        }
+    }
+}
