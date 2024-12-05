@@ -23,7 +23,7 @@ class SearchController extends Controller
 
         $company_id = $request->input('company_id');
         $newStartDate = $request->start_date;
-        $newEndDate = Carbon::parse($request->end_date)->endOfDay();
+        $newEndDate = Carbon::parse($request->end_date)->endOfDay(); // convert date to seconds since start date is in seconds format and end date is in seconds format  
 
         $q = Car::query();
 

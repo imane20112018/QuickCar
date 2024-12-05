@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $customer = Customer::where('user_id', auth()->user()->id)->first();
 
         //dd($customer->user_id);
-        if (!$customer) {
+        if (!$customer) {  // if no customer exist yet, create one
 
             return abort(404);
 

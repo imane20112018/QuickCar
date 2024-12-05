@@ -63,7 +63,7 @@ class CarController extends Controller
     public function create()
     {
 
-        $company = Company::all();
+        $company = Company::all(); 
 
         return view('backend.car-create', compact('company'));
 
@@ -87,7 +87,7 @@ class CarController extends Controller
 
         if ($request->hasFile('photo')) {
 
-            $fileName = Str::uuid() . '.' . $request->photo->extension();
+            $fileName = Str::uuid() . '.' . $request->photo->extension(); // remove the extension from the file name for compatibility with old versions
             $request->photo->move(public_path('uploads'), $fileName);
             $validatedData['photo'] = $fileName;
         }

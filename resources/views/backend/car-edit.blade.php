@@ -74,7 +74,7 @@
                     <textarea name="description" id="description">{{ $car->description }}</textarea>
                 </div>
                 <div class="box_f">
-                    @csrf
+                    @csrf 
                 @method('PUT')
                     <button class="btn_submit" type="submit">Update Car</button>
                 </div>
