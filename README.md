@@ -44,6 +44,7 @@ To run this project, ensure you have the following installed:
 </ul>
 
 <hr>
+
 ## Installation
 
 Clone the repository
