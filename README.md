@@ -4,22 +4,6 @@ A comprehensive Car Rental System built with Laravel to manage car bookings, cus
 
 <hr>
 
-<hr>
-<p align="center">
-<b><a href="#installation">Installation</a></b>
-|
-<b><a href="#screenshots-top">Screenshots</a></b>
-|
-<b><a href="#contributing-top">Contributing</a></b>
-|
-<b><a href="#supporting-top">Supporting</a></b>
-|
-<b><a href="#credits-top">Credits</a></b>
-|
-<b><a href="#license-top">License</a></b>
-</p>
-
-<hr>
 
 ## Features
 
