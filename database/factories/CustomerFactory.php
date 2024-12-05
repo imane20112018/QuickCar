@@ -20,7 +20,7 @@ class CustomerFactory extends Factory
         return [
             
             'user_id' => 1,
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => '06' . $this->faker->numerify('########'),
             'address' => $this->faker->address,
             'city' => $this->faker->city,
 
