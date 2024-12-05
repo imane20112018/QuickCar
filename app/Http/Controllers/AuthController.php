@@ -37,9 +37,9 @@ class AuthController extends Controller
             'password' => $request->input('password_x')
         ];
 
-        if (Auth::attempt($data, true)) {
+        if (Auth::attempt($data, true)) {// password is already taken from database and password will be changed to new password when authentication is successful
 
-            $request->session()->regenerate();
+            $request->session()->regenerate();// set session variable for password generation process 
             
             return redirect()->route('frontend.home');
         }
